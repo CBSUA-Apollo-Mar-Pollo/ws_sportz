@@ -120,16 +120,42 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
-exports.Prisma.UserScalarFieldEnum = {
+exports.Prisma.MatchScalarFieldEnum = {
   id: 'id',
-  email: 'email',
-  name: 'name',
+  sport: 'sport',
+  homeTeam: 'homeTeam',
+  awayTeam: 'awayTeam',
+  status: 'status',
+  startTime: 'startTime',
+  endTime: 'endTime',
+  homeScore: 'homeScore',
+  awayScore: 'awayScore',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.CommentaryScalarFieldEnum = {
+  id: 'id',
+  matchId: 'matchId',
+  minute: 'minute',
+  sequence: 'sequence',
+  period: 'period',
+  eventType: 'eventType',
+  actor: 'actor',
+  team: 'team',
+  message: 'message',
+  metadata: 'metadata',
+  tags: 'tags',
   createdAt: 'createdAt'
 };
 
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
+};
+
+exports.Prisma.NullableJsonNullValueInput = {
+  DbNull: Prisma.DbNull,
+  JsonNull: Prisma.JsonNull
 };
 
 exports.Prisma.QueryMode = {
@@ -142,9 +168,20 @@ exports.Prisma.NullsOrder = {
   last: 'last'
 };
 
+exports.Prisma.JsonNullValueFilter = {
+  DbNull: Prisma.DbNull,
+  JsonNull: Prisma.JsonNull,
+  AnyNull: Prisma.AnyNull
+};
+exports.MatchStatus = exports.$Enums.MatchStatus = {
+  SCHEDULED: 'SCHEDULED',
+  LIVE: 'LIVE',
+  FINISHED: 'FINISHED'
+};
 
 exports.Prisma.ModelName = {
-  User: 'User'
+  Match: 'Match',
+  Commentary: 'Commentary'
 };
 
 /**
